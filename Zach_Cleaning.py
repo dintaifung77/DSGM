@@ -10,5 +10,5 @@ v_df = v_df.dropna()
 survey_cols = ['Func1', 'Func2', 'Usab1', 'Usab2']
 v_df['Variance'] = v_df[survey_cols].var(axis=1)
 
-v_df = v_df[v_df['Variance'] > 0]
+v_df = v_df[v_df['Variance'] >= 0 & (v_df['Variance'] <= 0.5)]
 print("Rows remaining:", len(v_df))
